@@ -1,0 +1,14 @@
+.progress {
+  width: 100%;
+  margin-top: 3rem;
+  max-width: 50rem;
+  justify-content: flex-end;
+}
+.box {
+  flex: 1;
+}
+.progress header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
