@@ -5,9 +5,10 @@ import { TodoList } from './TodoList';
 
 interface Props {
   list: IList[];
+  onDelete: (listId: string) => void;
 }
 
-export function List({ list }: Props) {
+export function List({ list, onDelete }: Props) {
   const listQuantity = list.length;
   const completedList = list.filter((todoList) => todoList.isCompleted).length;
 
@@ -28,7 +29,7 @@ export function List({ list }: Props) {
       </header>
       <div className={styles.listTodo}>
         {list.map((todoList) => (
-          <TodoList key={todoList.id} todoList={todoList} />
+          <TodoList key={todoList.id} todoList={todoList} onDelete={onDelete}/>
         ))}
       </div>
     </section>

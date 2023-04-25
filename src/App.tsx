@@ -36,10 +36,15 @@ function App() {
     ]);
   }
 
+  function deleteListById(listId: string) {
+    const newList = list.filter((list) => list.id === listId);
+    setList(newList);
+  }
+
   return (
     <div>
       <Header onAddList={addList}/>
-      <List list={list} />
+      <List list={list}  onDelete={deleteListById}/>
     </div>
   );
 }
